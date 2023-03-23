@@ -7,10 +7,13 @@ import { education, startingFeatures } from '../constants';
 import { StartSteps, TitleText, TypingText } from '../components';
 import { staggerContainer, fadeIn, planetVariants } from '../utils/motion';
 
+const staggerChildren = 0.2;
+const delayChildren = 0.1;
+
 const GetStarted = () => (
     <section className={`${styles.paddings} relative z-10`}>
         <motion.div
-            variants={staggerContainer}
+            variants={staggerContainer(staggerChildren, delayChildren)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
@@ -24,7 +27,7 @@ const GetStarted = () => (
                     variants={fadeIn('left', 'tween', 0.2, 1)}
                     className="flex-[0.75] flex justify-center flex-col"
                 >
-                    <TypingText title="| My Education" />
+                    <TypingText title="| My Education" textStyles='' />
                     <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
                         {education.map((feature, index) => (
                             <StartSteps
@@ -40,7 +43,7 @@ const GetStarted = () => (
                 variants={fadeIn('left', 'tween', 0.2, 1)}
                 className="flex-[0.75] flex justify-center flex-col"
             >
-                <TypingText title="| My Experience" />
+                <TypingText title="| My Experience" textStyles='' />
                 <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
                     {startingFeatures.map((feature, index) => (
                         <StartSteps

@@ -6,10 +6,13 @@ import { motion } from 'framer-motion';
 import styles from '@/styles/styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
+const staggerChildren = 0.2;
+const delayChildren = 0.1;
+
 const Hero = () => (
     <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
         <motion.div
-            variants={staggerContainer}
+            variants={staggerContainer(staggerChildren, delayChildren)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}

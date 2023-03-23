@@ -10,11 +10,13 @@ import { ExploreCard, TitleText, TypingText } from '../components';
 
 const Explore = () => {
     const [active, setActive] = useState('world-2');
+    const staggerChildren = 0.2;
+    const delayChildren = 0.1;
 
     return (
         <section className={`${styles.paddings}`} id="explore">
             <motion.div
-                variants={staggerContainer}
+                variants={staggerContainer(staggerChildren, delayChildren)}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}

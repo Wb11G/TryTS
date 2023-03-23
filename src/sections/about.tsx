@@ -6,12 +6,14 @@ import { TypingText } from '../components';
 import styles from '@/styles/styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
+const staggerChildren = 0.2;
+const delayChildren = 0.1;
 
 const About = () => (
     <section className={`${styles.paddings} relative z-10`}>
         <div className="gradient-02 z-0" />
         <motion.div
-            variants={staggerContainer}
+            variants={staggerContainer(staggerChildren, delayChildren)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
